@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Not an accessibility tool (isAccessibilityTool stays false): CouchMouse uses the API to show a
+     cursor and to tap, scroll and type for the paired phone. Window content is read only to find
+     the focused text field, so phone typing can be put into it. -->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeViewFocused|typeWindowStateChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:canPerformGestures="true"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/service_description"
+    android:notificationTimeout="100"
+    android:summary="@string/service_summary" />

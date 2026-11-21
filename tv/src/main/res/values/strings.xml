@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CouchMouse TV</string>
+    <string name="service_label">CouchMouse TV</string>
+    <string name="service_summary">Mouse cursor and typing from the CouchMouse phone app</string>
+    <string name="service_description">CouchMouse shows a mouse cursor on your TV and taps, scrolls and types for you when you use the CouchMouse app on your phone. It only acts on commands from phones you have paired with a code or QR code shown on this TV. It reads the screen only to find the text box you are typing into, and it never collects, stores or shares what is on your screen. Nothing leaves your home network.</string>
+</resources>
