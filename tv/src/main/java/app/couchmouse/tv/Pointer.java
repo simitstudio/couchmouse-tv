@@ -30,7 +30,8 @@ final class Pointer {
     private final AccessibilityService svc;
     private final WindowManager wm;
     private final Handler handler = new Handler();
-    private final int w, h, size;
+    private final int size;
+    private int w, h; // current screen size (it can change: TV boxes switch resolution)
     private final View cursor;
     private final WindowManager.LayoutParams lp;
     private boolean shown;
@@ -65,8 +66,21 @@ final class Pointer {
         lp.gravity = Gravity.TOP | Gravity.LEFT;
     }
 
+    /** Re-reads the screen size, so the cursor stays on screen after a resolution or rotation change. */
+    private void measure() {
+        Point p = new Point();
+        wm.getDefaultDisplay().getRealSize(p);
+        if (p.x != w || p.y != h) {
+            w = p.x;
+            h = p.y;
+            x = clamp(x, w);
+            y = clamp(y, h);
+        }
+    }
+
     void handle(String msg) {
         try {
+            measure();
             String[] a = msg.split(" ");
             switch (a[0]) {
                 case "m":
