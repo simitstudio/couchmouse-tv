@@ -30,6 +30,14 @@ You need JDK 17 and the Android SDK (API 36).
 
 Release builds read their signing settings from `signing.properties`, which is not in the repository.
 
+## Links
+
+- Website: https://simitstudio.com/couchmouse
+- Privacy policy: https://simitstudio.com/couchmouse/privacy
+- Help: https://simitstudio.com/couchmouse/support, or email support@simitstudio.com
+
+CouchMouse is made by [Simit Studio](https://simitstudio.com).
+
 ## License
 
 GPL-3.0. See [LICENSE](LICENSE).

@@ -6,3 +6,5 @@ local.properties
 signing.properties
 .idea/
 *.iml
+__pycache__/
+*.pyc
