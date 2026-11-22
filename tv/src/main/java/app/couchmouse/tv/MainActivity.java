@@ -60,6 +60,8 @@ public class MainActivity extends Activity {
         row.setOrientation(LinearLayout.HORIZONTAL);
         row.setPadding(dp(64), dp(40), dp(64), dp(32));
         ScrollView scroll = new ScrollView(this);
+        // With nothing to select (no phones yet) the scroll view takes the focus; don't grey it out.
+        if (Build.VERSION.SDK_INT >= 26) scroll.setDefaultFocusHighlightEnabled(false);
         left = new LinearLayout(this);
         left.setOrientation(LinearLayout.VERTICAL);
         scroll.addView(left);
