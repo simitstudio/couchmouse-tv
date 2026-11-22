@@ -23,12 +23,15 @@ header nav a { color: var(--dim); text-decoration: none; }
 .button { display: inline-block; padding: 13px 22px; border-radius: 12px; background: var(--accent-2); color: #fff; text-decoration: none; font-weight: 600; }
 .button.soft { background: var(--panel); color: var(--text); border: 1px solid var(--line); }
 .note { color: var(--dim); font-size: 14px; text-align: center; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 36px 0; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; margin: 36px 0; }
 .card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
 .card h3 { margin: 0 0 6px; font-size: 18px; }
 .card p { margin: 0; color: var(--dim); font-size: 15px; }
 h2 { font-size: 26px; margin: 44px 0 12px; letter-spacing: -.01em; }
 ol.steps { padding-left: 22px; }
+.lead { color: var(--dim); font-size: 18px; margin-top: 0; }
+.shot { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--line); margin: 18px 0; }
+h2 .inline-icon { width: 34px; height: 34px; border-radius: 9px; vertical-align: -6px; margin-right: 10px; }
 ol.steps li { margin: 8px 0; }
 .legal h1 { font-size: 34px; margin: 36px 0 4px; }
 .legal .updated { color: var(--dim); margin-top: 0; }
