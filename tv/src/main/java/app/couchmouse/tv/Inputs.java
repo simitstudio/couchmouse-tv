@@ -44,6 +44,9 @@ final class Inputs {
     private static AccessibilityNodeInfo field(AccessibilityService s) {
         try {
             AccessibilityNodeInfo n = s.findFocus(AccessibilityNodeInfo.FOCUS_INPUT);
+            // Fresh text and cursor: the cached copy can lag behind fast typing while the app is
+            // busy (e.g. rebuilding search results), and typing would then replace the last letter.
+            if (n != null) n.refresh();
             return n != null && n.isEditable() ? n : null;
         } catch (Exception e) {
             return null;
