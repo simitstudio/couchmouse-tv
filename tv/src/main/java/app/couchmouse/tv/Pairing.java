@@ -170,7 +170,7 @@ final class Pairing {
             list.remove(old);
         }
         save(c, list);
-        show(c, "Phone paired", "\u2713", name + "\ncan now control the TV", 4000);
+        show(c, c.getString(R.string.card_paired_title), "\u2713", c.getString(R.string.card_paired_body, name), 4000);
         return key;
     }
 
@@ -208,8 +208,7 @@ final class Pairing {
         if (fails >= MAX_FAILS) {
             code = null;
             long min = (pausedFor() + 59999) / 60000;
-            show(c, "Pairing paused", "!", "Too many wrong codes were typed on a phone.\nTry again in "
-                    + min + (min == 1 ? " minute." : " minutes."), 10000);
+            show(c, c.getString(R.string.card_paused_title), "!", c.getString(R.string.card_paused_body, (int) min), 10000);
             return "wait " + (pausedFor() / 1000 + 1);
         }
         if (codeTries >= TRIES_PER_CODE) {
@@ -280,7 +279,8 @@ final class Pairing {
 
     private static void showCode(Context c, String device) {
         String s = code.charAt(0) + " " + code.charAt(1) + " " + code.charAt(2) + " " + code.charAt(3);
-        show(c, "Pair your phone", s, "Type this code on your " + device, codeUntil - System.currentTimeMillis());
+        show(c, c.getString(R.string.card_pair_title), s, c.getString(R.string.card_pair_body, device),
+                codeUntil - System.currentTimeMillis());
     }
 
     /** c must be the accessibility service (KeyService) for the overlay window type. */

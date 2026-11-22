@@ -73,6 +73,7 @@ later `hello`. The TV stores only SHA-256(K). Forgetting a phone on the TV disco
 | `key <up\|down\|left\|right\|ok>` | Move the focus like the remote's arrows (for TVs without Google's remote service) |
 | `apps` | List the TV's apps |
 | `launch <package>` | Open an app |
+| `link <percent-encoded url>` | Open a market:// or https:// link on the TV (e.g. a Play Store page) |
 | `power` | Standby (Android 9+) |
 | `ping` | Keep-alive. Send every 15 s; the TV hangs up after 45 s of silence |
 

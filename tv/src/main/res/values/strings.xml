@@ -4,4 +4,31 @@
     <string name="service_label">CouchMouse TV</string>
     <string name="service_summary">Mouse cursor and typing from the CouchMouse phone app</string>
     <string name="service_description">CouchMouse shows a mouse cursor on your TV and taps, scrolls and types for you when you use the CouchMouse app on your phone. It only acts on commands from phones you have paired with a code or QR code shown on this TV. It reads the screen only to find the text box you are typing into, and it never collects, stores or shares what is on your screen. Nothing leaves your home network.</string>
+
+    <string name="tagline">A real mouse cursor for this TV, from your phone.</string>
+    <string name="allow_title">Allow CouchMouse to control this TV</string>
+    <string name="allow_steps">In the list that opens, select CouchMouse TV and turn it on.</string>
+    <string name="restricted_hint">If the TV says “Restricted setting”: open Settings → Apps → CouchMouse TV, choose “Allow restricted settings”, then try again.</string>
+    <string name="agree">Agree and turn on</string>
+    <string name="not_now">Not now</string>
+    <string name="connect_title">Connect your phone</string>
+    <string name="connect_steps">1.  Open the CouchMouse app on your phone.\n2.  Scan the code on the right, or choose “%1$s” in the app.</string>
+    <string name="no_network">This TV isn\'t connected to a network.</string>
+    <string name="same_wifi">Phone and TV must be on the same Wi-Fi.  TV address: %1$s</string>
+    <string name="scan_with">Scan with CouchMouse</string>
+    <string name="qr_unavailable">QR code unavailable</string>
+    <string name="paired_phones">Paired phones</string>
+    <string name="none_yet">None yet.</string>
+    <string name="connected_now">connected now</string>
+    <string name="used_just_now">used just now</string>
+    <string name="used_ago">used %1$s</string>
+    <string name="ok_to_forget">OK to forget</string>
+    <string name="forgotten">%1$s forgotten. It needs a new code to connect again.</string>
+
+    <string name="card_pair_title">Pair your phone</string>
+    <string name="card_pair_body">Type this code on your %1$s</string>
+    <string name="card_paired_title">Phone paired</string>
+    <string name="card_paired_body">%1$s\ncan now control the TV</string>
+    <string name="card_paused_title">Pairing paused</string>
+    <string name="card_paused_body">Too many wrong codes were typed on a phone.\nTry again in %1$d min.</string>
 </resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="service_summary">CouchMouse telefon uygulamasından fare imleci ve yazma</string>
+    <string name="service_description">CouchMouse, telefonunuzdaki CouchMouse uygulamasını kullandığınızda TV\'nizde bir fare imleci gösterir ve sizin için dokunur, kaydırır ve yazar. Yalnızca bu TV\'de gösterilen bir kod veya QR kodla eşleştirdiğiniz telefonlardan gelen komutlara göre çalışır. Ekranı yalnızca yazdığınız kutuyu bulmak için okur; ekranınızdakileri asla toplamaz, saklamaz veya paylaşmaz. Hiçbir şey ev ağınızın dışına çıkmaz.</string>
+
+    <string name="tagline">Bu TV için telefonunuzdan gerçek bir fare imleci.</string>
+    <string name="allow_title">CouchMouse\'un bu TV\'yi kontrol etmesine izin verin</string>
+    <string name="allow_steps">Açılan listede CouchMouse TV\'yi seçip açın.</string>
+    <string name="restricted_hint">TV “Kısıtlanmış ayar” derse: Ayarlar → Uygulamalar → CouchMouse TV\'yi açın, “Kısıtlanmış ayarlara izin ver”i seçin ve tekrar deneyin.</string>
+    <string name="agree">Kabul et ve aç</string>
+    <string name="not_now">Şimdi değil</string>
+    <string name="connect_title">Telefonunuzu bağlayın</string>
+    <string name="connect_steps">1.  Telefonunuzda CouchMouse uygulamasını açın.\n2.  Sağdaki kodu tarayın ya da uygulamada “%1$s” seçin.</string>
+    <string name="no_network">Bu TV bir ağa bağlı değil.</string>
+    <string name="same_wifi">Telefon ve TV aynı Wi-Fi ağında olmalı.  TV adresi: %1$s</string>
+    <string name="scan_with">CouchMouse ile tarayın</string>
+    <string name="qr_unavailable">QR kod gösterilemiyor</string>
+    <string name="paired_phones">Eşleştirilmiş telefonlar</string>
+    <string name="none_yet">Henüz yok.</string>
+    <string name="connected_now">şu an bağlı</string>
+    <string name="used_just_now">az önce kullanıldı</string>
+    <string name="used_ago">%1$s kullanıldı</string>
+    <string name="ok_to_forget">Unutmak için OK</string>
+    <string name="forgotten">%1$s unutuldu. Yeniden bağlanmak için yeni bir kod gerekir.</string>
+
+    <string name="card_pair_title">Telefonunuzu eşleştirin</string>
+    <string name="card_pair_body">Bu kodu telefonunuza (%1$s) yazın</string>
+    <string name="card_paired_title">Telefon eşleştirildi</string>
+    <string name="card_paired_body">%1$s\nartık TV\'yi kontrol edebilir</string>
+    <string name="card_paused_title">Eşleştirme durduruldu</string>
+    <string name="card_paused_body">Bir telefonda çok fazla yanlış kod girildi.\n%1$d dk sonra tekrar deneyin.</string>
+</resources>

@@ -80,6 +80,8 @@ public class CouchMouseService extends AccessibilityService {
             case "media":
                 Inputs.media(this, arg);
                 return null;
+            case "link": // e.g. a Play Store page: market://details?id=...
+                return Inputs.open(this, Server.dec(arg)) ? null : "err link";
             case "power":
                 if (Build.VERSION.SDK_INT >= 28) performGlobalAction(GLOBAL_ACTION_LOCK_SCREEN);
                 return null;

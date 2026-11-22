@@ -106,51 +106,46 @@ public class MainActivity extends Activity {
 
         TextView title = text(left, "CouchMouse TV", 34, Color.WHITE);
         title.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
-        text(left, "A real mouse cursor for this TV, from your phone.", 16, DIM).setPadding(0, dp(2), 0, dp(18));
+        text(left, getString(R.string.tagline), 16, DIM).setPadding(0, dp(2), 0, dp(18));
 
         if (!on()) {
-            section("Allow CouchMouse to control this TV");
+            section(getString(R.string.allow_title));
             text(left, getString(R.string.service_description), 16, 0xFFE2E8F0).setLineSpacing(0, 1.25f);
-            text(left, "In the list that opens, select CouchMouse TV and turn it on.", 15, DIM)
-                    .setPadding(0, dp(10), 0, dp(4));
-            if (Build.VERSION.SDK_INT >= 33) {
-                text(left, "If the TV says “Restricted setting”: open Settings → Apps → CouchMouse TV, "
-                        + "choose “Allow restricted settings”, then try again.", 14, DIM);
-            }
-            button("agree", "Agree and turn on", true, new Runnable() {
+            text(left, getString(R.string.allow_steps), 15, DIM).setPadding(0, dp(10), 0, dp(4));
+            if (Build.VERSION.SDK_INT >= 33) text(left, getString(R.string.restricted_hint), 14, DIM);
+            button("agree", getString(R.string.agree), true, new Runnable() {
                 @Override
                 public void run() {
                     openAccessibilitySettings();
                 }
             });
-            button("later", "Not now", false, new Runnable() {
+            button("later", getString(R.string.not_now), false, new Runnable() {
                 @Override
                 public void run() {
                     finish();
                 }
             });
         } else {
-            section("Connect your phone");
+            section(getString(R.string.connect_title));
             String ip = address();
-            text(left, "1.  Open the CouchMouse app on your phone.\n2.  Scan the code on the right, or choose “"
-                    + Phones.tvName(this) + "” in the app.", 17, 0xFFE2E8F0).setLineSpacing(0, 1.35f);
-            text(left, ip == null ? "This TV isn't connected to a network." :
-                    "Phone and TV must be on the same Wi-Fi.  TV address: " + ip, 14, DIM).setPadding(0, dp(8), 0, 0);
+            text(left, getString(R.string.connect_steps, Phones.tvName(this)), 17, 0xFFE2E8F0).setLineSpacing(0, 1.35f);
+            text(left, ip == null ? getString(R.string.no_network) : getString(R.string.same_wifi, ip), 14, DIM)
+                    .setPadding(0, dp(8), 0, 0);
             if (ip != null) qr(ip);
 
             List<Pairing.Phone> phones = Pairing.phones(this);
-            section("Paired phones");
-            if (phones.isEmpty()) text(left, "None yet.", 15, DIM);
+            section(getString(R.string.paired_phones));
+            if (phones.isEmpty()) text(left, getString(R.string.none_yet), 15, DIM);
             long now = System.currentTimeMillis();
             for (final Pairing.Phone p : phones) {
-                String used = Server.isConnected(p.hash) ? "connected now"
-                        : now - p.used < 60000 ? "used just now"
-                        : "used " + DateUtils.getRelativeTimeSpanString(p.used, now, DateUtils.MINUTE_IN_MILLIS);
-                row(p.hash, p.name, used + "     OK to forget", new Runnable() {
+                String used = Server.isConnected(p.hash) ? getString(R.string.connected_now)
+                        : now - p.used < 60000 ? getString(R.string.used_just_now)
+                        : getString(R.string.used_ago, DateUtils.getRelativeTimeSpanString(p.used, now, DateUtils.MINUTE_IN_MILLIS));
+                row(p.hash, p.name, used + "     " + getString(R.string.ok_to_forget), new Runnable() {
                     @Override
                     public void run() {
                         Pairing.forget(MainActivity.this, p.hash);
-                        note = p.name + " forgotten. It needs a new code to connect again.";
+                        note = getString(R.string.forgotten, p.name);
                         fill();
                     }
                 });
@@ -181,11 +176,11 @@ public class MainActivity extends Activity {
             iv.setBackground(bg);
             iv.setPadding(dp(10), dp(10), dp(10), dp(10));
             right.addView(iv, new LinearLayout.LayoutParams(dp(320), dp(320)));
-            TextView t = text(right, "Scan with CouchMouse", 15, DIM);
+            TextView t = text(right, getString(R.string.scan_with), 15, DIM);
             t.setGravity(Gravity.CENTER);
             t.setPadding(0, dp(10), 0, 0);
         } catch (Exception e) {
-            text(right, "QR code unavailable", 14, DIM);
+            text(right, getString(R.string.qr_unavailable), 14, DIM);
         }
     }
 

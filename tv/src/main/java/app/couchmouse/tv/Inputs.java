@@ -105,6 +105,14 @@ final class Inputs {
     // ---- Arrow keys without key injection: move the focus like the remote would ----
 
     static boolean dpad(AccessibilityService s, String dir) {
+        if (Build.VERSION.SDK_INT >= 33) { // real D-pad events for accessibility services (Android 13+)
+            int a = "up".equals(dir) ? AccessibilityService.GLOBAL_ACTION_DPAD_UP
+                    : "down".equals(dir) ? AccessibilityService.GLOBAL_ACTION_DPAD_DOWN
+                    : "left".equals(dir) ? AccessibilityService.GLOBAL_ACTION_DPAD_LEFT
+                    : "right".equals(dir) ? AccessibilityService.GLOBAL_ACTION_DPAD_RIGHT
+                    : AccessibilityService.GLOBAL_ACTION_DPAD_CENTER;
+            if (s.performGlobalAction(a)) return true;
+        }
         AccessibilityNodeInfo f = s.findFocus(AccessibilityNodeInfo.FOCUS_INPUT);
         if ("ok".equals(dir)) {
             for (AccessibilityNodeInfo n = f; n != null; n = n.getParent()) {
@@ -169,6 +177,17 @@ final class Inputs {
         bm.compress(Build.VERSION.SDK_INT >= 30 ? Bitmap.CompressFormat.WEBP_LOSSY : Bitmap.CompressFormat.WEBP, 80, out);
         bm.recycle();
         return Base64.encodeToString(out.toByteArray(), Base64.NO_WRAP);
+    }
+
+    /** Opens a Play Store or web link on the TV. */
+    static boolean open(Context c, String url) {
+        if (!url.startsWith("market://") && !url.startsWith("https://")) return false;
+        try {
+            c.startActivity(new Intent(Intent.ACTION_VIEW, android.net.Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     static boolean launch(Context c, String pkg) {
