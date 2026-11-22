@@ -229,7 +229,7 @@ public class MainActivity extends Activity {
     }
 
     private void section(String s) {
-        TextView t = text(left, s.toUpperCase(Locale.ENGLISH), 13, 0xFF8B93B8);
+        TextView t = text(left, s.toUpperCase(Locale.getDefault()), 13, 0xFF8B93B8); // UI language: Turkish needs İ, not I
         t.setLetterSpacing(0.12f);
         t.setTypeface(Typeface.DEFAULT_BOLD);
         t.setPadding(0, dp(18), 0, dp(8));
